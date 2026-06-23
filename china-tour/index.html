@@ -1,1 +1,639 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0B">
+<title>Непопсовый Китай — Sergio Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0B0B0B;--bg2:#131313;--bg3:#1A1A1A;--gold:#C9A96E;--goldl:#DEC08A;--text:#EFECE5;--muted:#6A6A6A;--bord:rgba(239,236,229,.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;font-size:15px;line-height:1.75;overflow-x:hidden}
 
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(11,11,11,.96),transparent);transition:background .3s}
+nav.sc{background:rgba(11,11,11,.97);border-bottom:1px solid var(--bord)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.nlinks{display:flex;gap:28px;align-items:center}
+.nlinks a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nlinks a:hover{color:var(--text)}
+.ncta{color:var(--bg)!important;background:var(--gold);padding:10px 22px;transition:background .2s!important}
+.ncta:hover{background:var(--goldl)!important}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 84px;overflow:hidden}
+.hbg{position:absolute;inset:0;background-image:url('img/hero.jpg');background-size:cover;background-position:center 35%;filter:brightness(.52)}
+.hveil{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.93) 0%,rgba(11,11,11,.08) 55%,transparent 100%)}
+.htag{position:relative;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hh1{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(56px,9vw,120px);font-weight:300;line-height:.9;margin-bottom:22px}
+.hh1 em{font-style:italic;color:var(--gold)}
+.hsub{position:relative;font-size:14px;color:rgba(239,236,229,.5);line-height:1.6;margin-bottom:32px}
+.hpills{position:relative;display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(201,169,110,.35);color:var(--gold);padding:6px 13px}
+.hscroll{position:absolute;right:48px;bottom:40px;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}
+.hscroll::before{content:'';display:block;width:1px;height:40px;background:var(--gold)}
+
+/* STRIP */
+.strip{background:var(--bg2);border-top:1px solid var(--bord);border-bottom:1px solid var(--bord)}
+.strip-i{max-width:1100px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr)}
+.si{padding:34px 0;border-right:1px solid var(--bord);padding-right:24px}
+.si+.si{padding-left:24px}
+.si:last-child{border-right:none}
+.sn{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:4px}
+.sl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.sd{font-size:12px;color:rgba(239,236,229,.4)}
+
+/* SECTIONS */
+section{padding:88px 48px}
+.inn{max-width:1100px;margin:0 auto}
+.ey{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.st{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.8vw,52px);font-weight:300;line-height:1.08;margin-bottom:36px}
+.bt{font-size:15px;color:rgba(239,236,229,.6);line-height:1.8;max-width:600px}
+
+/* ROUTE */
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.rc{position:relative;height:380px;overflow:hidden}
+.rcbg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.68);transition:transform .7s,filter .4s}
+.rc:hover .rcbg{transform:scale(1.05);filter:brightness(.75)}
+.rcv{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.88) 0%,transparent 55%)}
+.rcb{position:absolute;bottom:0;left:0;right:0;padding:26px}
+.rcn{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+.rcna{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;line-height:1.1;margin-bottom:5px}
+.rcd{font-size:12px;color:rgba(239,236,229,.6);line-height:1.5}
+.rct-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.rct{display:inline-block;font-size:9px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(201,169,110,.4);color:var(--gold);padding:3px 9px}
+
+/* DAYS */
+.dsec{background:var(--bg2)}
+.dlist{margin-top:40px}
+.day{display:grid;grid-template-columns:80px 1fr 280px;border-top:1px solid var(--bord)}
+.day:last-child{border-bottom:1px solid var(--bord)}
+.dl{padding:26px 0;border-right:1px solid var(--bord)}
+.dnum{font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:300;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
+.dm{padding:26px 28px}
+.ddate{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.dtit{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;margin-bottom:7px;line-height:1.2}
+.ddesc{font-size:13px;color:rgba(239,236,229,.52);line-height:1.65;margin-bottom:10px}
+.dtrans{font-size:12px;color:rgba(201,169,110,.65);display:flex;gap:12px;flex-wrap:wrap}
+.dtrans span{display:flex;align-items:center;gap:4px}
+.dimg{overflow:hidden}
+.dimg img{width:100%;height:100%;object-fit:cover;filter:brightness(.82);transition:transform .6s,filter .4s}
+.day:hover .dimg img{transform:scale(1.04);filter:brightness(.70)}
+
+/* HOTELS */
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.hcard{position:relative;height:300px;overflow:hidden}
+.hcard img{width:100%;height:100%;object-fit:cover;filter:brightness(.75);transition:transform .6s,filter .4s}
+.hcard:hover img{transform:scale(1.05);filter:brightness(.82)}
+.hcap{position:absolute;bottom:0;left:0;right:0;padding:16px 20px;background:linear-gradient(to top,rgba(11,11,11,.82),transparent);font-size:12px;color:rgba(239,236,229,.75)}
+
+/* TRANSPORT */
+.tlist{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px}
+.tc{background:var(--bg3);padding:32px 26px;border-top:2px solid transparent;transition:border-color .3s}
+.tc:hover{border-top-color:var(--gold)}
+.tico{font-size:24px;margin-bottom:12px}
+.tna{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:7px}
+.tde{font-size:12px;color:rgba(239,236,229,.5);line-height:1.6}
+
+/* INCLUDED */
+.igrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.ic{background:var(--bg3);padding:36px}
+.icit{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--bord)}
+.ic.ex .icit{color:var(--muted)}
+.ilist{list-style:none}
+.ilist li{font-size:13px;color:rgba(239,236,229,.7);padding:7px 0;border-bottom:1px solid var(--bord);display:flex;align-items:flex-start;gap:9px}
+.ilist li:last-child{border-bottom:none}
+.ilist li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:11px;margin-top:2px}
+.ic.ex .ilist li::before{content:'×';color:var(--muted)}
+
+/* PRICING */
+.psec{background:var(--bg2)}
+.ptiers{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.tier{background:var(--bg3);padding:42px;display:flex;flex-direction:column}
+.tier.ft{border-top:2px solid var(--gold)}
+.tbadge{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.tname{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin-bottom:20px;line-height:1.15}
+.tprice{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:300;line-height:1;color:var(--gold);margin-bottom:5px}
+.talt{font-size:12px;color:rgba(201,169,110,.55);font-style:italic;margin-bottom:22px}
+.tinc{list-style:none}
+.tinc li{font-size:13px;color:rgba(239,236,229,.65);padding:7px 0;border-bottom:1px solid var(--bord);display:flex;align-items:flex-start;gap:9px}
+.tinc li:last-child{border-bottom:none}
+.tinc li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:11px;margin-top:2px}
+.psteps{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg3);margin-top:2px}
+.ps{padding:30px 28px;border-right:1px solid var(--bord)}
+.ps:last-child{border-right:none}
+.pspct{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:7px}
+.pswhen{font-size:13px;color:var(--text);margin-bottom:2px}
+.psnote{font-size:12px;color:var(--muted)}
+
+/* GUIDES */
+.ggrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.gc{background:var(--bg3);display:flex;overflow:hidden}
+.gimg{width:180px;flex-shrink:0}
+.gimg img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) brightness(.90)}
+.gbody{padding:32px 28px}
+.grole{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.gname{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin-bottom:12px;line-height:1.15}
+.gbio{font-size:13px;color:rgba(239,236,229,.58);line-height:1.7}
+.glangs{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.lt{font-size:9px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--bord);color:var(--muted);padding:3px 8px}
+
+/* FAQ */
+.flist{margin-top:40px}
+.fi2{border-top:1px solid var(--bord)}
+.fi2:last-child{border-bottom:1px solid var(--bord)}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:20px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;user-select:none;transition:color .2s}
+.fq:hover{color:var(--gold)}
+.ficon{font-size:20px;color:var(--gold);flex-shrink:0;font-style:normal;font-family:'Inter',sans-serif;font-weight:200;line-height:1;transition:transform .3s}
+.fi2.op .ficon{transform:rotate(45deg)}
+.fa{font-size:14px;color:rgba(239,236,229,.58);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .4s ease,padding-bottom .3s}
+.fi2.op .fa{max-height:600px;padding-bottom:24px}
+
+/* CTA */
+.cta{position:relative;padding:120px 48px;text-align:center;overflow:hidden}
+.ctabg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1666278172017-ad93e14c329d?w=1200&q=60');background-size:cover;background-position:center;filter:brightness(.17)}
+.ctabg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,var(--bg) 90%)}
+.ctai{position:relative;max-width:680px;margin:0 auto}
+.ctah{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.5vw,68px);font-weight:300;line-height:1.05;margin-bottom:18px}
+.ctah em{font-style:italic;color:var(--gold)}
+.ctas{font-size:14px;color:rgba(239,236,229,.55);margin-bottom:40px;line-height:1.75}
+.brow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.bg{display:inline-block;background:var(--gold);color:#0B0B0B;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:14px 36px;text-decoration:none;transition:background .2s,transform .2s}
+.bg:hover{background:var(--goldl);transform:translateY(-1px)}
+.bo{display:inline-block;background:transparent;color:var(--text);font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;padding:13px 36px;text-decoration:none;border:1px solid rgba(239,236,229,.2);transition:border-color .2s,color .2s}
+.bo:hover{border-color:var(--gold);color:var(--gold)}
+.ctac{margin-top:24px;font-size:13px;color:var(--muted)}
+.ctac a{color:var(--gold);text-decoration:none}
+
+footer{background:var(--bg);border-top:1px solid var(--bord);padding:30px 48px;display:flex;align-items:center;justify-content:space-between}
+.flo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.fli{display:flex;gap:24px}
+.fli a{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.fli a:hover{color:var(--gold)}
+.fco{font-size:10px;color:rgba(106,106,106,.5)}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.fi.v{opacity:1;transform:none}
+
+/* RESP */
+@media(max-width:860px){.important-grid{grid-template-columns:1fr!important}
+  nav{padding:16px 20px}
+  .nlinks a:not(.ncta){display:none}
+  section{padding:60px 20px}
+  .strip-i{grid-template-columns:1fr 1fr;padding:0 20px}
+  .si:nth-child(3),.si:nth-child(4){border-top:1px solid var(--bord)}
+  .rgrid,.ptiers,.igrid,.ggrid,.hgrid,.tlist{grid-template-columns:1fr}
+  .day{grid-template-columns:52px 1fr}
+  .dimg{display:none}
+  .psteps{grid-template-columns:1fr}
+  .ps{border-right:none;border-bottom:1px solid var(--bord)}
+  .ps:last-child{border-bottom:none}
+  .hero{padding:0 20px 60px}
+  .hscroll{display:none}
+  footer{flex-direction:column;gap:14px;text-align:center}
+  .gc{flex-direction:column}
+  .gimg{width:100%;height:190px}
+  .cta{padding:88px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nlogo">Sergio Travel</a>
+  <div class="nlinks"><a href="../index.html" style="display:flex;align-items:center;gap:6px">← Все туры</a>
+    <a href="#route">Маршрут</a>
+    <a href="#days">Дни</a>
+    <a href="#pricing">Цены</a>
+    <a href="#guides">Гиды</a>
+    <a href="#booking" class="ncta">Забронировать</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hbg"></div>
+  <div class="hveil"></div>
+  <div class="htag">Sergio Travel · Авторский тур · 10–18 октября 2026</div>
+  <h1 class="hh1">Непопсовый<br><em>Китай</em></h1>
+  <p class="hsub">от тибетских гор и панд до топ-мегаполисов мира за 8 дней</p>
+  <div class="hpills">
+    <span class="pill">Горы Сычуани</span>
+    <span class="pill">Самый узкий город мира</span>
+    <span class="pill">Панды</span>
+    <span class="pill">Киберпанк-столица</span>
+  </div>
+  <div class="hscroll">Скроллить</div>
+</div>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-i">
+    <div class="si"><div class="sn">8</div><div class="sl">Дней</div><div class="sd">10–18 октября</div></div>
+    <div class="si"><div class="sn">6</div><div class="sl">Участников</div><div class="sd">Только единомышленники</div></div>
+    <div class="si"><div class="sn" style="font-size:22px;padding-top:10px">Одноместное</div><div class="sl">Размещение</div><div class="sd">Собственный номер</div></div>
+    <div class="si"><div class="sn">2</div><div class="sl">Гида</div><div class="sd">Опытных путешественника</div></div>
+  </div>
+</div>
+
+<!-- САМОЕ ВАЖНОЕ -->
+<section>
+  <div class="inn">
+    <div class="ey fi">Самое важное, если лень читать всё</div>
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;margin-top:0" class="important-grid">
+    <div class="fi" style="display:flex;flex-direction:column;max-width:740px;margin-top:8px">
+      <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">1</span>
+        <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">8 дней путешествия по одному из самых необычных регионов Китая:</strong> будут крупные города Чэнду и Чунцин, горы Сычуани и множество природных жемчужин Китая. Поровну времени на природу и города.</p>
+      </div>
+      <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">2</span>
+        <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Всего 6 участников.</strong> Только единомышленники, с которыми нам по пути.</p>
+      </div>
+      <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">3</span>
+        <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Одноместное размещение.</strong> У каждого участника собственный номер на протяжении всей поездки.</p>
+      </div>
+      <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">4</span>
+        <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Два опытных путешественника-гида.</strong> Мы очень любим этот маршрут и хотим разделить его вместе с вами.</p>
+      </div>
+      <div style="display:flex;gap:18px;padding:16px 0;align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">5</span>
+        <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">В стоимость включены проживание, все переезды по маршруту, завтраки и обеды.</strong> В общем всё, кроме ужинов.</p>
+      </div>
+    </div>
+      <div class="fi" style="position:sticky;top:100px">
+        <div>
+          <p style="font-size:12px;letter-spacing:.04em;color:rgba(239,236,229,.5);line-height:1.6;margin-bottom:12px;font-style:normal">Нас ждут ландшафты, которых ещё не видели в русскоязычном интернете</p>
+          <div style="overflow:hidden">
+            <img src="img/chongqing-night.jpg" style="width:100%;display:block;filter:brightness(1.0)" alt="Горы">
+          </div>
+          <p style="font-size:11px;color:rgba(239,236,229,.3);line-height:1.5;margin-top:10px">Так выглядит локация в горах, куда мы отправимся сразу после Чэнду</p>
+        </div>
+      </div>
+    </div><!-- end grid -->
+  </div>
+</section>
+
+<!-- ROUTE -->
+<section style="background:var(--bg2);padding-top:0" id="route">
+  <div class="inn">
+    <div class="ey fi">Маршрут</div>
+    <h2 class="st fi">Концептуально маршрут разделён<br>на две концепции: <em style="font-style:italic;color:var(--gold)">города и природа</em></h2>
+    <div class="rgrid fi">
+      <div class="rc">
+        <div class="rcbg" style="background-image:url('https://images.unsplash.com/photo-1565590139163-c590339b8292?w=700&q=70')"></div>
+        <div class="rcv"></div>
+        <div class="rcb">
+          <div class="rcn">2 ночи</div>
+          <div class="rcna">Чэнду, город</div>
+          <div class="rcd">Спокойный город чайных, парков и панд</div>
+          <div class="rct-row"><span class="rct">Город</span></div>
+        </div>
+      </div>
+      <div class="rc">
+        <div class="rcbg" style="background-image:url('img/panda.webp')"></div>
+        <div class="rcv"></div>
+        <div class="rcb">
+          <div class="rcn">2 ночи</div>
+          <div class="rcna">Сыгуняньшань, горы</div>
+          <div class="rcd">Тибетская культура, горы и высокогорные долины, умопомрачительные виды</div>
+          <div class="rct-row"><span class="rct">Природа</span></div>
+        </div>
+      </div>
+      <div class="rc">
+        <div class="rcbg" style="background-image:url('https://images.unsplash.com/photo-1624418304676-e1b6ff23e780?w=700&q=70')"></div>
+        <div class="rcv"></div>
+        <div class="rcb">
+          <div class="rcn">2 ночи</div>
+          <div class="rcna">Ибинь и Яньцзинь, деревени</div>
+          <div class="rcd">Китай без туристических декораций, самый узкий город, куда добираются единицы</div>
+          <div class="rct-row"><span class="rct">Деревни</span><span class="rct">Природа</span></div>
+        </div>
+      </div>
+      <div class="rc">
+        <div class="rcbg" style="background-image:url('img/mountains-day12.jpg')"></div>
+        <div class="rcv"></div>
+        <div class="rcb">
+          <div class="rcn">2 ночи</div>
+          <div class="rcna">Чунцин, мегаполис</div>
+          <div class="rcd">Один из самых необычных мегаполисов мира</div>
+          <div class="rct-row"><span class="rct">Мегаполис</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPORT -->
+<section style="background:var(--bg)">
+  <div class="inn">
+    <div class="ey fi">Как будем перемещаться</div>
+    <h2 class="st fi">За поездку попробуем практически<br>все основные виды транспорта Китая</h2>
+    <div class="tlist fi">
+      <div class="tc"><div class="tico">🚄</div><div class="tna">Скоростные поезда</div><div class="tde">Между крупными городами — быстро и с видами из окна.</div></div>
+      <div class="tc"><div class="tico">🚗</div><div class="tna">Комфортабельные такси</div><div class="tde">Для переездов внутри городов — без суеты.</div></div>
+      <div class="tc"><div class="tico">🚐</div><div class="tna">Минивэны в горах</div><div class="tde">Горные дороги, небольшие деревеньки и виды, которые редко попадают в туристические маршруты.</div></div>
+    </div>
+    <p class="fi" style="margin-top:20px;font-size:13px;color:var(--muted)">Всю логистику мы берём на себя.</p>
+  </div>
+</section>
+
+<!-- HOTELS -->
+<section style="background:var(--bg2);padding-top:0">
+  <div class="inn">
+    <div class="ey fi">Где будем жить</div>
+    <h2 class="st fi">Крутые бутик-отели,<br>которые подбираем под каждую локацию</h2>
+    <p class="bt fi">Где-то топ-виды на горы, где-то китайская роскошь, а где-то тепло и деревенский уют. <strong style="color:var(--text);font-weight:400">Собственный номер для каждого участника</strong>, удобное расположение, красивые виды и всё необходимое для комфортного отдыха после дня в дороге. Конкретные детали комнат могут быть отличными от фото, но класс жилья не может быть ниже.</p>
+    <div class="hgrid fi">
+      <div class="hcard"><img src="img/mountains-day13.jpg" loading="lazy" alt=""><div class="hcap">Горы западного Китая из вашего окна</div></div>
+      <div class="hcard"><img src="img/leshan-buddha.jpg" loading="lazy" alt=""><div class="hcap">Небоскрёбы Чунцина видны из спальни</div></div>
+      <div class="hcard"><img src="img/yanjin.jpg" loading="lazy" alt=""><div class="hcap">Комфортабельные и современные комнаты</div></div>
+      <div class="hcard"><img src="img/chongqing1.jpg" loading="lazy" alt=""><div class="hcap">Атмосфера китайских селений в Ибине</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAYS -->
+<section class="dsec" id="days">
+  <div class="inn">
+    <div class="ey fi">Маршрут по дням</div>
+    <h2 class="st fi">Подробный маршрут день за днём</h2>
+    <div class="dlist fi">
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 1</div></div>
+        <div class="dm">
+          <div class="ddate">Суббота · 10 октября</div>
+          <div class="dtit">Чэнду</div>
+          <div class="ddesc">Прилетаем, заселяемся, выдыхаем после перелёта. Вечером — мост Аньшунь и бары: первое знакомство группы под местные напитки и неоновые огни старого Чэнду. Это тот вечер, когда чужие люди превращаются в компанию, с которой предстоит провести следующие девять дней одной семьёй.</div>
+          <div class="dtrans"><span>✈️ перелёт</span><span>🚗 ~40 мин от аэропорта</span></div>
+        </div>
+        <div class="dimg"><img src="https://images.unsplash.com/photo-1740754588312-08365583271d?w=400&q=65" loading="lazy" alt="Чэнду"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 2</div></div>
+        <div class="dm">
+          <div class="ddate">Воскресенье · 11 октября</div>
+          <div class="dtit">Чэнду</div>
+          <div class="ddesc">Утро начинается рано — в 7:30 мы уже у северного входа парка панд, чтобы успеть увидеть их активными и без толп туристов. После обеда ныряем в атмосферу Chunxi Road: шум, неон, уличная еда. Вечером — атмосферные бары, где можно обсудить впечатления дня и подготовиться к завтрашнему выезду в горы.</div>
+          <div class="dtrans"><span>🚗 до 1 ч по городу</span></div>
+        </div>
+        <div class="dimg"><img src="img/chongqing2.jpg" loading="lazy" alt="Панды"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 3</div></div>
+        <div class="dm">
+          <div class="ddate">Понедельник · 12 октября</div>
+          <div class="dtit">Гора четырёх девушек</div>
+          <div class="ddesc">Прощаемся с городской суетой и отправляемся в горы. Дорога долгая, но каждый поворот серпантина меняет пейзаж — от рисовых полей и альпийских лугов до снежных высоких гор, ничем не уступающих Альпам. Заселяемся, переводим дыхание в разреженном горном воздухе, делаем фотки и готовимся к насыщенному дню среди вершин.</div>
+          <div class="dtrans"><span>🚐 ~4 часа</span><span>🥾 3–4 часа трекинг</span></div>
+        </div>
+        <div class="dimg"><img src="img/cat.jpg" loading="lazy" alt="Горы"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 4</div></div>
+        <div class="dm">
+          <div class="ddate">Вторник · 13 октября</div>
+          <div class="dtit">Гора четырёх девушек</div>
+          <div class="ddesc">Полный день в горах — без спешки, без городского шума. Прогулки среди пиков, тишина, которую невозможно найти в мегаполисах, и небо, которое здесь кажется ближе. Это день перезагрузки в середине маршрута, после которого вкус к городским приключениям вернётся с новой силой.</div>
+          <div class="dtrans"><span>🥾 весь день пешком</span></div>
+        </div>
+        <div class="dimg"><img src="img/hotel-mountains.webp" loading="lazy" alt="Горы"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 5</div></div>
+        <div class="dm">
+          <div class="ddate">Среда · 14 октября</div>
+          <div class="dtit">Лешань + Ибинь</div>
+          <div class="ddesc">Выезд из горного региона и поездка в Лешань к гигантскому сидящему Будде, высеченному в скале больше тысячи лет назад. Смотрим на него с лодки — именно так открывается весь масштаб монумента, который иначе не охватить взглядом, а затем небольшой трекинг длительностью 1,5 часа наверх к голове Будды. Далее на скоростном поезде (менее 1 ч) едем в Ибинь, небольшой город, раскинутый среди природных ландшафтов.</div>
+          <div class="dtrans"><span>🚐 ~5 часов на авто</span><span>⛵ лодка к Будде</span><span>🥾 1,5 ч наверх</span><span>🚄 &lt;1 ч до Ибиня</span></div>
+        </div>
+        <div class="dimg"><img src="img/hotel-chongqing.jpg" loading="lazy" alt="Лешань"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 6</div></div>
+        <div class="dm">
+          <div class="ddate">Четверг · 15 октября</div>
+          <div class="dtit">Ибинь</div>
+          <div class="ddesc">Мало кто из туристов включает Ибинь в маршрут по Китаю, и это его главная прелесть. Главное событие дня — самый узкий город мира (Yanjing County), зажатый между скал таким образом, что улицы шириной в пару метров умещают сотни тысяч жителей. Зрелище, которое стоит увидеть своими глазами.</div>
+          <div class="dtrans"><span>🚗 ~3 ч до Яньцзиня и обратно</span></div>
+        </div>
+        <div class="dimg"><img src="img/hotel-room.jpg" loading="lazy" alt="Яньцзинь"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 7</div></div>
+        <div class="dm">
+          <div class="ddate">Пятница · 16 октября</div>
+          <div class="dtit">Чунцин</div>
+          <div class="ddesc">Едем на поезде в Чунцин — город на холмах, где улицы вьются вертикально, а небоскрёбы соседствуют с подвесными канатками. Заселяемся и сразу окунаемся в атмосферу: это один из самых визуально безумных городов Китая, и первое впечатление от него обычно остаётся надолго. Вечером поднимаемся к пагоде Хунъэнь.</div>
+          <div class="dtrans"><span>🚄 ~2 ч до Чунцина</span></div>
+        </div>
+        <div class="dimg"><img src="img/hotel-yibin.jpg" loading="lazy" alt="Чунцин"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 8</div></div>
+        <div class="dm">
+          <div class="ddate">Суббота · 17 октября</div>
+          <div class="dtit">Чунцин</div>
+          <div class="ddesc">Свободное утро для отдыха, затем — неспешная чайная церемония в атмосферном месте, без суеты. После обеда едем на фуникулёре через реку, откуда открывается лучший вид на город. Завершаем день прощальным ужином всей группой в самом красивом инстаграмном ресторане китайского барбекю, а в 20:30 — шоу дронов на Chaotianmen, одно из самых впечатляющих в стране.</div>
+          <div class="dtrans"><span>🚡 фуникулёр через реку</span><span>🚗 до 1 ч по городу</span></div>
+        </div>
+        <div class="dimg"><img src="img/mountains-road.jpg" loading="lazy" alt="Чунцин"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 9</div></div>
+        <div class="dm">
+          <div class="ddate">Воскресенье · 18 октября</div>
+          <div class="dtit">Выезд</div>
+          <div class="ddesc">Завтрак, сборы, свободное время на последние покупки и прогулки. Дальше — кто-то едет поездом обратно в Чэнду, кто-то улетает домой прямо из Чунцина, а кто-то едет на экстра-трип с организаторами (читайте ниже!).</div>
+          <div class="dtrans"><span>✈️ домой из Чунцина</span><span>🚄 в Чэнду</span><span>🚄 в расширенный тур</span></div>
+        </div>
+        <div class="dimg"><img src="img/gordey.jpg" loading="lazy" alt="Разлёт"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section style="background:var(--bg)">
+  <div class="inn">
+    <div class="ey fi">Состав тура</div>
+    <h2 class="st fi">Что входит в стоимость</h2>
+    <div class="igrid fi">
+      <div class="ic">
+        <div class="icit">Включено в стоимость</div>
+        <ul class="ilist">
+          <li>проживание на протяжении всего маршрута</li>
+          <li>одноместное размещение</li>
+          <li>все завтраки</li>
+          <li>все обеды</li>
+          <li>приветственный и прощальный ужины</li>
+          <li>все входные билеты на достопримечательности по программе</li>
+          <li>все переезды по маршруту внутри программы</li>
+          <li>гиды, активности, все развлечения по программе</li>
+        </ul>
+      </div>
+      <div class="ic ex">
+        <div class="icit">Не входит в стоимость</div>
+        <ul class="ilist">
+          <li>перелёт до Чэнду и обратно</li>
+          <li>страховка</li>
+          <li>ужины (кроме первого и последнего; стоимость ужинов в среднем 20–30$)</li>
+          <li>личные расходы, сувениры</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="psec" id="pricing">
+  <div class="inn">
+    <div class="ey fi">Стоимость и опции</div>
+    <h2 class="st fi">Выберите свой формат</h2>
+    <div class="ptiers fi">
+      <div class="tier ft">
+        <div class="tbadge">🔥 Основной</div>
+        <div class="tname">«Лучший трип года»</div>
+        <div class="tprice">$2 600</div>
+        <img src="img/sergio.jpg" style="width:100%;display:block;margin:14px 0 0;filter:brightness(.9);height:180px;object-fit:cover">
+        <div class="talt">при двухместном размещении (с вашим попутчиком) — $2 400 за чел.</div>
+        <ul class="tinc">
+          <li>всё включено кроме 6 ужинов</li>
+          <li>одноместное размещение</li>
+          <li>все завтраки, обеды и два ужина</li>
+          <li>все входные билеты по программе</li>
+          <li>все переезды внутри маршрута</li>
+          <li>два гида</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tbadge">💎 Расширенный</div>
+        <div class="tname">«Китайский олигарх»</div>
+        <div class="tprice">$3 800</div>
+        <img src="img/day5-leshan.jpg" style="width:100%;display:block;margin:14px 0 0;filter:brightness(.9);height:180px;object-fit:cover">
+        <div class="talt">&nbsp;</div>
+        <ul class="tinc">
+          <li>Основной трип</li>
+          <li>+ поездка на 3 ночи в Горы Аватара и древний город Фуронг с полным пакетом</li>
+        </ul>
+      </div>
+    </div>
+    <div class="psteps fi">
+      <div class="ps"><div class="pspct">30%</div><div class="pswhen">Предоплата при бронировании</div><div class="psnote">Бронирует ваше место в группе</div></div>
+      <div class="ps"><div class="pspct">40%</div><div class="pswhen">За месяц до поездки</div><div class="psnote">За 30 дней до старта</div></div>
+      <div class="ps"><div class="pspct">30%</div><div class="pswhen">Остаток — по приезде при встрече</div><div class="psnote">Рубли, крипта и вообще любые валюты</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section style="background:var(--bg)" id="guides">
+  <div class="inn">
+    <div class="ey fi">Кто ведёт тур</div>
+    <h2 class="st fi">Ваши гиды</h2>
+    <div class="ggrid fi">
+      <div class="gc">
+        <div class="gimg"><img src="img/day4-mountains.jpg" loading="lazy" alt="Сергей"></div>
+        <div class="gbody">
+          <div class="grole">Организатор · Sergio Travel</div>
+          <div class="gname">Серхио (Сергей Васильев)</div>
+          <div class="gbio">6 лет в активном путешествии, 62 страны за плечами, от Латинской Америки и Африки до Японии и Франции. Блогер, основатель одноименного YouTube-канала. Самое интересное для меня в путешествии и жизни — это общаться с людьми и объединять их. Изучать локации со стороны локального опыта, а также знакомиться со всеми красивыми частями страны.</div>
+          <div class="glangs"><span class="lt">Русский</span><span class="lt">English</span><span class="lt">Español</span><span class="lt">Português</span></div>
+        </div>
+      </div>
+      <div class="gc">
+        <div class="gimg"><img src="img/day1-chengdu.jpg" loading="lazy" alt="Гордей"></div>
+        <div class="gbody">
+          <div class="grole">Со-организатор</div>
+          <div class="gname">Гордей Деньщиков</div>
+          <div class="gbio">Путешественник с опытом более 50 стран. В копилке есть такие необычные направления как Сирия и Мьянма (туда, кстати, тоже есть туры). Опытный менеджер и надёжный товарищ.</div>
+          <div class="glangs"><span class="lt">Русский</span><span class="lt">English</span><span class="lt">Français</span><span class="lt">中文</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--bg2)">
+  <div class="inn">
+    <div class="ey fi">FAQ</div>
+    <h2 class="st fi">Ответы на самые популярные вопросы</h2>
+    <div class="flist fi">
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Кто ведёт тур?</span><i class="ficon">+</i></div>
+        <div class="fa">
+          <strong style="color:var(--text);display:block;margin-bottom:5px">Серхио (Сергей Васильев)</strong>
+          6 лет в активном путешествии, 62 страны за плечами, от Латинской Америки и Африки до Японии и Франции. Говорю на английском, испанском, немного португальском. Блогер, основатель одноименного YouTube-канала. Самое интересное для меня в путешествии и жизни — это общаться с людьми и объединять их. Изучать локации со стороны локального опыта, а также знакомиться со всеми красивыми частями страны.<br><br>
+          <strong style="color:var(--text);display:block;margin-bottom:5px">Гордей Деньщиков</strong>
+          Путешественник с опытом более 50 стран. В копилке есть такие необычные направления как Сирия и Мьянма (туда, кстати, тоже есть туры). Говорю на английском, французском и китайском. Опытный менеджер и надёжный товарищ.
+        </div>
+      </div>
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Будут ли ещё туры?</span><i class="ficon">+</i></div>
+        <div class="fa">Несколько туров уже запланированы, следующий из которых «Три Китая» будет в конце октября 2026 (Гуанчжоу – Шанхай – Макао). Подробнее можно узнать у организаторов.</div>
+      </div>
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Как производится оплата?</span><i class="ficon">+</i></div>
+        <div class="fa">Оплата производится в три этапа: 30% при бронировании, 40% за месяц до поездки и остаток (30%) в день встречи. Возможны различные опции оплаты: рубли, крипта и вообще любые валюты. По оплате пишите <a href="https://t.me/SirELSergio" style="color:var(--gold)">t.me/SirELSergio</a>.</div>
+      </div>
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Что если я один (одна) или в группе будут люди, которые мне не понравятся?</span><i class="ficon">+</i></div>
+        <div class="fa">Данная программа разработана с мыслью объединить незнакомых людей, схожих по духу. Предоставь это нам, в группе не будет абы кто. С нами едут только самые открытые миру светлые люди.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="booking">
+  <div class="ctabg"></div>
+  <div class="ctai">
+    <h2 class="ctah fi">Всего <em>6 участников.</em><br>Одно место — ваше?</h2>
+    <p class="ctas fi">По всем вопросам можно написать организаторам напрямую. Поможем разобраться с визой, билетами, маршрутом и любыми организационными вопросами.</p>
+    <div class="brow fi">
+      <a href="https://t.me/SirELSergio" class="bg" target="_blank">→ Написать Сергею</a>
+      <a href="https://t.me/gordeydensh" class="bo" target="_blank">→ Написать Гордею</a>
+    </div>
+    <div class="ctac fi" style="margin-top:22px"><a href="https://t.me/SirELSergio">t.me/SirELSergio</a></div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="flo">Sergio Travel</a>
+  <div class="fli">
+    <a href="https://t.me/travelssergio" target="_blank">Telegram</a>
+    <a href="https://sergiotravel.ru" target="_blank">sergiotravel.ru</a>
+  </div>
+  <div class="fco">© 2026 Sergio Travel</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60),{passive:true});
+const els=document.querySelectorAll('.fi');
+const ob=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('v'),i*55);ob.unobserve(e.target)}});
+},{threshold:.08});
+els.forEach(e=>ob.observe(e));
+function tf(el){const it=el.closest('.fi2'),op=it.classList.contains('op');document.querySelectorAll('.fi2.op').forEach(i=>i.classList.remove('op'));if(!op)it.classList.add('op')}
+</script>
+</body>
+</html>

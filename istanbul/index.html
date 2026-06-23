@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0b">
+<title>Anyma ÆDEN — Стамбул с Серхио</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--card:#161619;--white:#f0ede8;--dim:rgba(240,237,232,0.5);--accent:#C9A96E;--gold:#c9a96e;--border:rgba(255,255,255,0.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;font-weight:300;line-height:1.6}
+h1,h2,h3,.logo{font-family:'Cormorant Garamond',sans-serif;font-weight:400;letter-spacing:0.04em}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('img/hero.jpg') 65% 30%/cover no-repeat;filter:brightness(0.4)}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--bg) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 24px}
+.eyebrow{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#c084fc;margin-bottom:20px}
+.hero h1{font-size:clamp(56px,10vw,120px);line-height:0.95;margin-bottom:8px}
+.hero h1 span{color:#c084fc}
+.hero-sub{font-size:clamp(16px,2.5vw,22px);color:var(--dim);margin-bottom:32px;letter-spacing:0.05em}
+.date-badge{display:inline-block;border:1px solid var(--border);padding:8px 24px;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:40px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:16px 40px;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:background .3s}
+.btn:hover{background:#c084fc}
+.scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--dim);font-size:10px;letter-spacing:0.2em;text-transform:uppercase}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--dim),transparent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* SECTIONS */
+section{padding:80px 24px}
+.container{max-width:1100px;margin:0 auto}
+.label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h2{font-size:clamp(32px,5vw,56px);line-height:1.1;margin-bottom:20px}
+h2 span{color:#c084fc}
+.body-text{color:var(--dim);font-size:15px;line-height:1.8;max-width:580px}
+.divider{width:36px;height:1px;background:var(--accent);margin:20px 0}
+
+/* ANYMA */
+.anyma{background:#111114;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.anyma-img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(0.85)}
+
+/* DAYS */
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
+.day{background:var(--card);padding:28px 24px;border-top:2px solid transparent;transition:border-color .3s}
+.day:hover{border-color:var(--accent)}
+.day img{width:calc(100% + 48px);margin:-28px -24px 20px;height:160px;object-fit:cover;filter:brightness(0.6)}
+.day-num{font-family:'Cormorant Garamond',sans-serif;font-size:40px;color:rgba(123,110,246,0.2);line-height:1;margin-bottom:6px}
+.day-title{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.day-body{font-size:13px;color:var(--dim);line-height:1.7}
+
+/* HOUSING */
+.housing{background:#111114}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:40px}
+.gallery img{height:200px;object-fit:cover;filter:brightness(0.82);transition:filter .3s}
+.gallery img:hover{filter:brightness(1)}
+.housing-text{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+
+/* INCLUDES */
+.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
+.list-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+ul{list-style:none}
+ul li{padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;display:flex;gap:12px}
+ul.inc li::before{content:'✓';color:var(--accent);flex-shrink:0}
+ul.exc li::before{content:'—';color:var(--dim);flex-shrink:0}
+
+/* PRICING */
+.pricing{background:#111114;border-top:1px solid var(--border)}
+.price-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;max-width:640px}
+.price-card{background:var(--card);padding:36px 32px}
+.price-card.feat{background:linear-gradient(135deg,rgba(123,110,246,.15),rgba(192,132,252,.08));border:1px solid rgba(123,110,246,.3)}
+.price-type{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.price-amt{font-family:'Cormorant Garamond',sans-serif;font-size:52px;line-height:1;margin-bottom:6px}
+.price-amt span{font-size:18px;color:var(--dim)}
+.price-note{font-size:13px;color:var(--dim);margin-top:10px}
+.spots{display:inline-block;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.3);color:var(--gold);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;padding:6px 16px;margin-top:28px}
+.pay-note{margin-top:20px;font-size:14px;color:var(--dim);line-height:1.8;max-width:540px}
+
+/* CTA */
+.cta-section{text-align:center;padding:100px 24px}
+.tg-btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 48px;font-size:13px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;transition:background .3s,transform .2s}
+.tg-btn:hover{background:#c084fc;transform:translateY(-2px)}
+.cta-note{font-size:13px;color:var(--dim);margin-top:16px}
+
+/* FOOTER */
+footer{background:#111114;border-top:1px solid var(--border);padding:40px 24px;text-align:center}
+.logo{font-size:26px;letter-spacing:0.1em;margin-bottom:12px}
+.footer-sub{font-size:12px;color:var(--dim)}
+.footer-tg{display:inline-flex;align-items:center;gap:8px;color:#c084fc;font-size:13px;margin-top:16px;transition:color .2s}
+.footer-tg:hover{color:var(--white)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .two-col,.inc-grid,.price-cards,.housing-text{grid-template-columns:1fr}
+  .days{grid-template-columns:1fr 1fr}
+  section{padding:56px 20px}
+}
+@media(max-width:480px){
+  .days{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div style="position:fixed;top:20px;left:24px;z-index:999">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9A96E;background:rgba(11,11,11,.85);padding:10px 18px;border:1px solid rgba(201,169,110,.3);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">← Все туры</a>
+</div>
+
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Anyma с Серхио · Стамбул 2026</p>
+    <h1>Стамбул.<br><span>ÆDEN.</span></h1>
+    <p class="hero-sub">4 дня. Пентхаус. Своя компания.</p>
+    <div class="date-badge">10 — 13 сентября 2026</div><br><br>
+    <a href="#cta" class="btn">Забронировать место</a>
+  </div>
+  <div class="scroll"><div class="scroll-line"></div><span>Листай</span></div>
+</section>
+
+<section class="anyma">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <p class="label">Главное событие</p>
+        <h2>Anyma <span>ÆDEN</span></h2>
+        <div class="divider"></div>
+        <p class="body-text">Ataköy Marina Arena — открытая площадка у моря. Мощный звук, сногсшибательные визуальные эффекты и полное погружение в атмосферу. Ради этого события в Стамбул съедутся люди со всего мира.</p>
+        <br>
+        <p class="body-text">Мы тоже едем — но по-своему. Без массовых туров, без случайных людей. Только своя компания и максимум эмоций.</p>
+      </div>
+      <img class="anyma-img" src="img/photo1.jpg" alt="Anyma AEDEN">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="label">Программа</p>
+    <h2>4 дня <span>без лишнего</span></h2>
+    <div class="days">
+      <div class="day">
+        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=70" alt="День 1">
+        <div class="day-num">01</div>
+        <div class="day-title">Привет, Стамбул</div>
+        <p class="day-body">Встречаемся в аэропорту, заселяемся в пентхаус. Знакомимся за ужином в турецком ресторанчике, гуляем по нетуристическим улочкам.</p>
+      </div>
+      <div class="day">
+        <img src="img/photo2.jpg" alt="День 2">
+        <div class="day-num">02</div>
+        <div class="day-title">Секретное место</div>
+        <p class="day-body">Просыпаемся и все вместе идем пропитываться духом Стамбула. Также отправимся в место, которое я приберёг специально для этой поездки.</p>
+      </div>
+      <div class="day">
+        <img src="img/photo3.jpg" alt="День 3">
+        <div class="day-num">03</div>
+        <div class="day-title">Город + Anyma</div>
+        <p class="day-body">С утра Айя-София, площадь Султанахмет, Цистерна Базилика, рахат-лукум на Гранд-базаре, ретро-трамвай. После обеда — наряжаемся и едем на Anyma ÆDEN.</p>
+      </div>
+      <div class="day">
+        <img src="https://images.unsplash.com/photo-1527838832700-5059252407fa?w=600&q=70" alt="День 4">
+        <div class="day-num">04</div>
+        <div class="day-title">Последнее утро</div>
+        <p class="day-body">Высыпаемся, снимаем контент, докупаем сувениры. Прощаемся и летим домой с воспоминаниями на годы вперёд.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="housing">
+  <div class="container">
+    <p class="label">Где живём</p>
+    <h2>Мы живем в своем доме,<br><span>а не в комнате гостиницы</span></h2>
+    <div class="gallery">
+      <img src="img/photo4.jpg" alt="Столовая" style="height:220px">
+      <img src="img/photo5.jpg" alt="Вид из окна" style="height:220px">
+      <img src="img/photo6.jpg" alt="Гостиная" style="height:220px">
+      <img src="img/photo7.jpg" alt="Терраса" style="height:220px">
+      <img src="img/photo8.jpg" alt="Спальня 1" style="height:200px">
+      <img src="img/photo9.jpg" alt="Спальня 2" style="height:200px">
+      <img src="img/photo10.jpg" alt="Спальня 3" style="height:200px">
+      <img src="img/photo11.jpg" alt="Ванная" style="height:200px">
+    </div>
+    <div class="housing-text">
+      <p class="body-text">Двухэтажный роскошный дуплекс в турецком стиле. Терраса с панорамным видом на море, балкон с видом на уютный сад. Расположен в историческом районе — улицы отражают подлинный характер старого города.</p>
+      <p class="body-text">4 спальни, общие пространства для всей компании. Здесь приятно возвращаться после концерта, включить свои плейлисты и просто быть.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="label">Что входит</p>
+    <h2>Всё <span>продумано</span></h2>
+    <div class="inc-grid">
+      <div>
+        <p class="list-label">Включено</p>
+        <ul class="inc">
+          <li>Пентхаус на всю компанию (4 спальни)</li>
+          <li>Билет на Anyma ÆDEN</li>
+          <li>Минивэн с водителем для наших передвижений</li>
+          <li>Трансфер аэропорт туда и обратно</li>
+          <li>Моё сопровождение и забота от и до</li>
+        </ul>
+      </div>
+      <div>
+        <p class="list-label">Не включено</p>
+        <ul class="exc">
+          <li>Авиабилеты (~30 000 ₽ из Москвы туда-обратно)</li>
+          <li>Питание (~$50 в день)</li>
+          <li>Сувениры (от нуля до бесконечности)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <p class="label">Стоимость</p>
+    <h2>Цены <span>для своих</span></h2>
+    <div class="divider"></div>
+    <p class="body-text">Это не массовый тур. Нас будет максимум 8 человек — пентхаус, своя атмосфера, своя компания. Едем за эмоциями, не за галочками.</p>
+    <div class="price-cards">
+      <div class="price-card">
+        <p class="price-type">Двойное размещение</p>
+        <div class="price-amt">$900<span>/чел</span></div>
+        <p class="price-note">Комната на двоих с подобранным соседом</p>
+      </div>
+      <div class="price-card feat">
+        <p class="price-type">Отдельная комната</p>
+        <div class="price-amt">$1150<span>/чел</span></div>
+        <p class="price-note">Своя комната только для тебя</p>
+      </div>
+    </div>
+    <div class="spots">⬤ &nbsp;Осталось мест: 5 из 8</div>
+    <p class="pay-note">Оплата в рублях по курсу Тинькофф на момент перевода.<br>Для бронирования места — предоплата <strong style="color:var(--white)">30%</strong>, остаток вносится за 30 дней до начала поездки.</p>
+  </div>
+</section>
+
+<section class="cta-section" id="cta">
+  <div class="container">
+    <p class="label">Бронирование</p>
+    <h2>Забронировать <span>место</span></h2>
+    <div class="divider" style="margin:20px auto"></div>
+    <p class="body-text" style="margin:0 auto 32px;text-align:center">Напиши Серхио в Telegram — расскажет детали и зафиксирует твоё место.</p>
+    <a href="https://t.me/sirelsergio" target="_blank" class="tg-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z"/></svg>
+      Написать @sirelsergio
+    </a>
+    <p class="cta-note">Серхио ответит лично — расскажет про программу и забронирует место.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Anyma с Серхио</div>
+  <p class="footer-sub">Стамбул · 10–13 сентября 2026</p>
+  <a href="https://t.me/sirelsergio" target="_blank" class="footer-tg">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z"/></svg>
+    @sirelsergio
+  </a>
+</footer>
+
+</body>
+</html>
