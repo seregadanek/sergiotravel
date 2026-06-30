@@ -637,5 +637,27 @@ const ob=new IntersectionObserver(entries=>{
 els.forEach(e=>ob.observe(e));
 function tf(el){const it=el.closest('.fi2'),op=it.classList.contains('op');document.querySelectorAll('.fi2.op').forEach(i=>i.classList.remove('op'));if(!op)it.classList.add('op')}
 </script>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:rgba(20,20,20,.97);border:1px solid rgba(201,169,110,.25);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:20px 28px;max-width:640px;width:calc(100% - 40px);display:flex;align-items:center;gap:20px;box-shadow:0 8px 40px rgba(0,0,0,.4)">
+  <p style="font-size:12px;color:rgba(239,236,229,.55);line-height:1.65;flex:1;margin:0">Мы используем cookies для корректной работы сайта. Продолжая просмотр, вы соглашаетесь с их использованием.</p>
+  <button onclick="acceptCookies()" style="flex-shrink:0;background:var(--gold,#C9A96E);color:#0B0B0B;border:none;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:12px 22px;cursor:pointer;transition:background .2s;white-space:nowrap" onmouseover="this.style.background='#DEC08A'" onmouseout="this.style.background='#C9A96E'">Принять</button>
+</div>
+<script>
+(function(){
+  if(localStorage.getItem('cookies_accepted')==='1'){
+    document.getElementById('cookie-banner').style.display='none';
+  }
+})();
+function acceptCookies(){
+  localStorage.setItem('cookies_accepted','1');
+  var b=document.getElementById('cookie-banner');
+  b.style.transition='opacity .3s,transform .3s';
+  b.style.opacity='0';
+  b.style.transform='translateX(-50%) translateY(20px)';
+  setTimeout(function(){b.style.display='none'},300);
+}
+</script>
+
 </body>
 </html>
