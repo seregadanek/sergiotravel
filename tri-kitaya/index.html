@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0B">
+<title>Три Китая — Sergio Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0B0B0B;--bg2:#131313;--bg3:#1A1A1A;--gold:#C9A96E;--goldl:#DEC08A;--text:#EFECE5;--muted:#6A6A6A;--bord:rgba(239,236,229,.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;font-size:15px;line-height:1.75;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(11,11,11,.96),transparent);transition:background .3s}
+nav.sc{background:rgba(11,11,11,.97);border-bottom:1px solid var(--bord)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.nlinks{display:flex;gap:28px;align-items:center}
+.nlinks a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nlinks a:hover{color:var(--text)}
+.ncta{color:var(--bg)!important;background:var(--gold);padding:10px 22px;transition:background .2s!important}
+.ncta:hover{background:var(--goldl)!important}
+.hero{position:relative;height:100vh;min-height:680px;display:flex;flex-direction:column;justify-content:center;padding:0 48px;padding-bottom:30vh;overflow:hidden}
+.hbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1400&q=75');background-size:cover;background-position:center 40%;filter:brightness(.45)}
+.hveil{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.93) 0%,rgba(11,11,11,.08) 55%,transparent 100%)}
+.htag{position:relative;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hh1{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(48px,8vw,108px);font-weight:300;line-height:.9;margin-bottom:22px;white-space:nowrap}
+.hh1 em{font-style:italic;color:var(--gold)}
+.hsub{position:relative;font-size:14px;color:rgba(239,236,229,.5);line-height:1.6;margin-bottom:32px}
+.hpills{position:relative;display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(201,169,110,.35);color:var(--gold);padding:6px 13px}
+.hscroll{position:absolute;right:48px;bottom:40px;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}
+.hscroll::before{content:'';display:block;width:1px;height:40px;background:var(--gold)}
+.strip{background:var(--bg2);border-top:1px solid var(--bord);border-bottom:1px solid var(--bord)}
+.strip-i{max-width:1100px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr)}
+.si{padding:34px 0;border-right:1px solid var(--bord);padding-right:24px}
+.si+.si{padding-left:24px}
+.si:last-child{border-right:none}
+.sn{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:4px}
+.sl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.sd{font-size:12px;color:rgba(239,236,229,.4)}
+section{padding:88px 48px}
+.inn{max-width:1100px;margin:0 auto}
+.ey{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.st{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.8vw,52px);font-weight:300;line-height:1.08;margin-bottom:36px}
+.bt{font-size:15px;color:rgba(239,236,229,.6);line-height:1.8}
+.important-grid{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
+
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.hcard{position:relative;height:300px;overflow:hidden}
+.hcard img{width:100%;height:100%;object-fit:cover;filter:brightness(.75);transition:transform .6s,filter .4s}
+.hcard:hover img{transform:scale(1.05);filter:brightness(.82)}
+.hcap{position:absolute;bottom:0;left:0;right:0;padding:16px 20px;background:linear-gradient(to top,rgba(11,11,11,.82),transparent);font-size:12px;color:rgba(239,236,229,.75)}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.rc{position:relative;height:380px;overflow:hidden}
+.rcbg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.68);transition:transform .7s,filter .4s}
+.rc:hover .rcbg{transform:scale(1.05);filter:brightness(.75)}
+.rcv{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.88) 0%,transparent 55%)}
+.rcb{position:absolute;bottom:0;left:0;right:0;padding:26px}
+.rcn{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+.rcna{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;line-height:1.1;margin-bottom:5px}
+.rcd{font-size:12px;color:rgba(239,236,229,.6);line-height:1.5}
+.rct-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.rct{display:inline-block;font-size:9px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(201,169,110,.4);color:var(--gold);padding:3px 9px}
+.dsec{background:var(--bg2)}
+.dlist{margin-top:40px}
+.day{display:grid;grid-template-columns:80px 1fr 280px;border-top:1px solid var(--bord)}
+.day:last-child{border-bottom:1px solid var(--bord)}
+.dl{padding:26px 0;border-right:1px solid var(--bord)}
+.dnum{font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:300;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
+.dm{padding:26px 28px}
+.ddate{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.dtit{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;margin-bottom:7px;line-height:1.2}
+.ddesc{font-size:13px;color:rgba(239,236,229,.52);line-height:1.65;margin-bottom:10px}
+.dtrans{font-size:12px;color:rgba(201,169,110,.65);display:flex;gap:12px;flex-wrap:wrap}
+.dtrans span{display:flex;align-items:center;gap:4px}
+.dimg{overflow:hidden}
+.dimg img{width:100%;height:100%;object-fit:cover;filter:brightness(.82);transition:transform .6s,filter .4s}
+.day:hover .dimg img{transform:scale(1.04);filter:brightness(.70)}
+.tlist{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px}
+.tc{background:var(--bg3);padding:32px 26px;border-top:2px solid transparent;transition:border-color .3s}
+.tc:hover{border-top-color:var(--gold)}
+.tico{font-size:24px;margin-bottom:12px}
+.tna{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:7px}
+.tde{font-size:12px;color:rgba(239,236,229,.5);line-height:1.6}
+.ggrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.gc{background:var(--bg3);display:flex;overflow:hidden}
+.gimg{width:180px;flex-shrink:0}
+.gimg img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) brightness(.90)}
+.gbody{padding:32px 28px}
+.grole{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.gname{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin-bottom:12px;line-height:1.15}
+.gbio{font-size:13px;color:rgba(239,236,229,.58);line-height:1.7}
+.glangs{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.lt{font-size:9px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--bord);color:var(--muted);padding:3px 8px}
+.igrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.ic{background:var(--bg3);padding:36px}
+.icit{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--bord)}
+.ic.ex .icit{color:var(--muted)}
+.ilist{list-style:none}
+.ilist li{font-size:13px;color:rgba(239,236,229,.7);padding:7px 0;border-bottom:1px solid var(--bord);display:flex;align-items:flex-start;gap:9px}
+.ilist li:last-child{border-bottom:none}
+.ilist li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:11px;margin-top:2px}
+.ic.ex .ilist li::before{content:'×';color:var(--muted)}
+.psec{background:var(--bg2)}
+.ptiers{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px}
+.tier{background:var(--bg3);padding:42px;display:flex;flex-direction:column}
+.tier.ft{border-top:2px solid var(--gold)}
+.tbadge{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.tname{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin-bottom:20px;line-height:1.15}
+.tprice{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:300;line-height:1;color:var(--gold);margin-bottom:5px}
+.talt{font-size:12px;color:rgba(201,169,110,.55);font-style:italic;margin-bottom:22px}
+.tinc{list-style:none}
+.tinc li{font-size:13px;color:rgba(239,236,229,.65);padding:7px 0;border-bottom:1px solid var(--bord);display:flex;align-items:flex-start;gap:9px}
+.tinc li:last-child{border-bottom:none}
+.tinc li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:11px;margin-top:2px}
+.psteps{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg3);margin-top:2px}
+.ps{padding:30px 28px;border-right:1px solid var(--bord)}
+.ps:last-child{border-right:none}
+.pspct{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:7px}
+.pswhen{font-size:13px;color:var(--text);margin-bottom:2px}
+.psnote{font-size:12px;color:var(--muted)}
+.flist{margin-top:40px}
+.fi2{border-top:1px solid var(--bord)}
+.fi2:last-child{border-bottom:1px solid var(--bord)}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:20px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;user-select:none;transition:color .2s}
+.fq:hover{color:var(--gold)}
+.ficon{font-size:20px;color:var(--gold);flex-shrink:0;font-style:normal;font-family:'Inter',sans-serif;font-weight:200;line-height:1;transition:transform .3s}
+.fi2.op .ficon{transform:rotate(45deg)}
+.fa{font-size:14px;color:rgba(239,236,229,.58);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .4s ease,padding-bottom .3s}
+.fi2.op .fa{max-height:600px;padding-bottom:24px}
+.cta{position:relative;padding:120px 48px;text-align:center;overflow:hidden}
+.ctabg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1200&q=60');background-size:cover;background-position:center;filter:brightness(.17)}
+.ctabg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,var(--bg) 90%)}
+.ctai{position:relative;max-width:680px;margin:0 auto}
+.ctah{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.5vw,68px);font-weight:300;line-height:1.05;margin-bottom:18px}
+.ctah em{font-style:italic;color:var(--gold)}
+.ctas{font-size:14px;color:rgba(239,236,229,.55);margin-bottom:40px;line-height:1.75}
+.brow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.bg{display:inline-block;background:var(--gold);color:#0B0B0B;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:14px 36px;text-decoration:none;transition:background .2s,transform .2s}
+.bg:hover{background:var(--goldl);transform:translateY(-1px)}
+.bo{display:inline-block;background:transparent;color:var(--text);font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;padding:13px 36px;text-decoration:none;border:1px solid rgba(239,236,229,.2);transition:border-color .2s,color .2s}
+.bo:hover{border-color:var(--gold);color:var(--gold)}
+footer{background:var(--bg);border-top:1px solid var(--bord);padding:30px 48px;display:flex;align-items:center;justify-content:space-between}
+.flo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.fli{display:flex;gap:24px}
+.fli a{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.fli a:hover{color:var(--gold)}
+.fco{font-size:10px;color:rgba(106,106,106,.5)}
+.fi{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.fi.v{opacity:1;transform:none}
+@media(max-width:860px){
+  .important-grid{grid-template-columns:1fr!important}
+  .hh1{white-space:normal}
+  nav{padding:16px 20px}
+  .nlinks a:not(.ncta){display:none}
+  section{padding:60px 20px}
+  .strip-i{grid-template-columns:1fr 1fr;padding:0 20px}
+  .si:nth-child(3),.si:nth-child(4){border-top:1px solid var(--bord)}
+  .rgrid,.ptiers,.igrid,.ggrid,.tlist{grid-template-columns:1fr}
+  .day{grid-template-columns:52px 1fr}
+  .dimg{display:none}
+  .psteps{grid-template-columns:1fr}
+  .ps{border-right:none;border-bottom:1px solid var(--bord)}
+  .ps:last-child{border-bottom:none}
+  .hero{padding:0 20px 60px}
+  .hscroll{display:none}
+  footer{flex-direction:column;gap:14px;text-align:center}
+  .gc{flex-direction:column}
+  .gimg{width:100%;height:190px}
+  .cta{padding:88px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nlogo">Sergio Travel</a>
+  <div class="nlinks">
+    <a href="../index.html">← Все туры</a>
+    <a href="#route">Маршрут</a>
+    <a href="#days">По дням</a>
+    <a href="#guides">Организаторы</a>
+    <a href="#booking" class="ncta">Забронировать</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hbg"></div>
+  <div class="hveil"></div>
+  <div class="htag">Авторское путешествие · 24 октября — 1 ноября 2026</div>
+  <h1 class="hh1">Три <em>Китая</em></h1>
+  <p class="hsub">Гонконг — Шанхай — Макао за одну поездку</p>
+  <div class="hpills">
+    <span class="pill">Мини-группа</span>
+    <span class="pill">Модный Шанхай</span>
+    <span class="pill">Кинематографичный Гонконг</span>
+    <span class="pill">Португальский Макао</span>
+  </div>
+  <div class="hscroll">Скроллить</div>
+</div>
+
+<div class="strip">
+  <div class="strip-i">
+    <div class="si"><div class="sn">9</div><div class="sl">Дней</div><div class="sd">24 окт — 1 ноя</div></div>
+    <div class="si"><div class="sn">6</div><div class="sl">Участников</div><div class="sd">Только единомышленники</div></div>
+    <div class="si"><div class="sn">3</div><div class="sl">Страны</div><div class="sd">Три разных мира</div></div>
+    <div class="si"><div class="sn" style="font-size:22px;padding-top:10px">Одноместное</div><div class="sl">Размещение</div><div class="sd">Собственный номер</div></div>
+  </div>
+</div>
+
+<section>
+  <div class="inn">
+    <div class="ey fi">Самое важное, если лень читать всё</div>
+    <div class="important-grid">
+      <div class="fi" style="display:flex;flex-direction:column">
+        <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">1</span>
+          <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Три совершенно разных Китая за одну поездку.</strong> Современный материковый Китай, более либеральный Гонконг и бывшая португальская колония Макао — столица казино. За 8 дней вы увидите три мира, которые сильно отличаются друг от друга.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">2</span>
+          <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Всего 6 участников.</strong> Только небольшая группа, благодаря чему путешествие проходит спокойно, без постоянного ожидания и толпы.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">3</span>
+          <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Одноместное размещение и высокий уровень комфорта.</strong> Никаких хостелов, автостопа и чрезмерной экономии. Свой номер всю поездку.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">4</span>
+          <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Два опытных путешественника-гида.</strong> Тандем известного блогера и эксперта по китайской культуре.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">5</span>
+          <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">В стоимость включены проживание, все переезды и перелёты между городами, завтраки и входные билеты.</strong> В общем всё, кроме обедов, части ужинов и билетов до/из Гуанчжоу.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--bord);align-items:flex-start">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">6</span>
+          <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Старт — в Гуанчжоу, финиш — в Шанхае.</strong> Оба направления шикарно соединены с Россией и миром. Билет в одну сторону из России обойдётся около $300.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:16px 0;align-items:flex-start">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);line-height:1;min-width:28px">7</span>
+          <p style="font-size:14px;color:rgba(239,236,229,.7);line-height:1.7"><strong style="color:var(--text);font-weight:400">Все виды активностей:</strong> от парков, музеев и набережных, до казино и громких кабаре.</p>
+        </div>
+      </div>
+      <div class="fi" style="display:flex;flex-direction:column;gap:2px">
+        <div style="overflow:hidden"><img src="img/sergio.jpg" style="width:100%;height:auto;display:block;filter:brightness(.95)" alt="Макао"></div>
+        <p style="margin-top:14px;font-size:12px;font-style:italic;color:var(--muted);line-height:1.6">Всего за одну поездку мы окажемся сразу в трёх совершенно разных мирах: среди небоскрёбов Гонконга, португальских улиц Макао и футуристического Шанхая — лучшего китайского города.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2);padding-top:0" id="route">
+  <div class="inn">
+    <div class="ey fi">Маршрут</div>
+    <h2 class="st fi">Три мира, которые<br>сильно отличаются друг от друга</h2>
+    <div class="rgrid fi">
+      <div class="rc">
+        <div class="rcbg" style="background-image:url('img/gordey.jpg')"></div>
+        <div class="rcv"></div>
+        <div class="rcb">
+          <div class="rcn">1 ночь</div>
+          <div class="rcna">Гуанчжоу</div>
+          <div class="rcd">Встречаемся, знакомимся, отдыхаем после перелёта. Кантонская кухня</div>
+          <div class="rct-row"><span class="rct">Старт</span></div>
+        </div>
+      </div>
+      <div class="rc">
+        <div class="rcbg" style="background-image:url('img/route-gz.jpg')"></div>
+        <div class="rcv"></div>
+        <div class="rcb">
+          <div class="rcn">2 ночи</div>
+          <div class="rcna">Гонконг</div>
+          <div class="rcd">Самый кинематографичный город Азии. Небоскрёбы, двухэтажные трамваи, Victoria Peak</div>
+          <div class="rct-row"><span class="rct">Мегаполис</span></div>
+        </div>
+      </div>
+      <div class="rc">
+        <div class="rcbg" style="background-image:url('img/route-hk.jpg')"></div>
+        <div class="rcv"></div>
+        <div class="rcb">
+          <div class="rcn">2 ночи</div>
+          <div class="rcna">Макао</div>
+          <div class="rcd">Бывшая португальская колония — столица казино. Европейская архитектура рядом с традиционным Китаем</div>
+          <div class="rct-row"><span class="rct">Казино</span><span class="rct">История</span></div>
+        </div>
+      </div>
+      <div class="rc">
+        <div class="rcbg" style="background-image:url('https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?w=800&q=70')"></div>
+        <div class="rcv"></div>
+        <div class="rcb">
+          <div class="rcn">3 ночи</div>
+          <div class="rcna">Шанхай</div>
+          <div class="rcd">Футуристический мегаполис — лучший китайский город. Набережная Бунд, небоскрёбы Пудуна</div>
+          <div class="rct-row"><span class="rct">Финал</span><span class="rct">Мегаполис</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOTELS -->
+<section style="background:var(--bg);padding-top:0">
+  <div class="inn">
+    <div class="ey fi">Где будем жить</div>
+    <h2 class="st fi">Где будем жить?</h2>
+    <p class="bt fi">Мы будем останавливаться в крутых сетевых и бутик-отелях, которые подбираем под каждую локацию маршрута. Где-то старинный французский особняк, где-то классический европейский сетевой бренд (IBIS / Courtyard by Marriott), а, например, в Макао — исторический отель, явившийся одним из первых легальных казино города.<br><br><strong style="color:var(--text);font-weight:400">Собственный номер для каждого участника</strong>, удобное расположение, красивые виды и всё необходимое для комфортного отдыха после дня в дороге. Конкретные детали комнат могут быть отличными от фото, но класс жилья не может быть ниже.</p>
+    <div class="hgrid fi">
+      <div class="hcard"><img src="img/hotel-macao-interior.jpg" loading="lazy" alt=""><div class="hcap">Интерьеры нашего отеля в Макао</div></div>
+      <div class="hcard"><img src="img/hotel-pool.jpg" loading="lazy" alt=""><div class="hcap">В некоторых отелях есть бассейн, где-то бар на крыше</div></div>
+      <div class="hcard"><img src="img/hotel-shanghai-mansion.jpg" loading="lazy" alt=""><div class="hcap">Исторический особняк-отель в центре Шанхая</div></div>
+      <div class="hcard"><img src="img/hotel-colonial.jpg" loading="lazy" alt=""><div class="hcap">Аутентичные интерьеры в колониальном стиле</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dsec" id="days">
+  <div class="inn">
+    <div class="ey fi">Программа</div>
+    <h2 class="st fi">Подробный маршрут день за днём</h2>
+    <div class="dlist fi">
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 1</div></div>
+        <div class="dm">
+          <div class="ddate">Суббота · 24 октября</div>
+          <div class="dtit">Гуанчжоу</div>
+          <div class="ddesc">Встречаемся в Гуанчжоу, знакомимся друг с другом и отдыхаем после перелёта. Вечером отправимся на первую прогулку по городу, попробуем кантонскую кухню и подготовимся к началу путешествия.</div>
+          <div class="dtrans"><span>🚗 до 1 ч по городу</span></div>
+        </div>
+        <div class="dimg"><img src="img/route-mc.jpg" loading="lazy" alt="Гуанчжоу"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 2</div></div>
+        <div class="dm">
+          <div class="ddate">Воскресенье · 25 октября</div>
+          <div class="dtit">Гонконг</div>
+          <div class="ddesc">Утром отправляемся в Гонконг на скоростном поезде. Заселяемся в отель и начинаем знакомство с городом: прогуляемся по центральной части, прокатимся на знаменитом двухэтажном трамвае и попробуем знаменитую гонконгскую еду. Вечером отправимся на закат с видом на бухту Виктория, увидим ночной Гонконг и отправимся в бары, куда ходит местная молодёжь.</div>
+          <div class="dtrans"><span>🚄 ~50 мин до Гонконга</span><span>🚃 двухэтажный трамвай 20 минут</span></div>
+        </div>
+        <div class="dimg"><img src="img/d1.jpg" loading="lazy" alt="Гонконг"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 3</div></div>
+        <div class="dm">
+          <div class="ddate">Понедельник · 26 октября</div>
+          <div class="dtit">Полный день в Гонконге</div>
+          <div class="ddesc">Посетим самое густонаселённое здание мира (известный монстр-билдинг Yick Cheong). Поднимемся на Victoria Peak и увидим один из лучших видов на мегаполис, прокатимся на Star Ferry до материковой части Гонконга, исследуем местные рынки, панорамные точки города, попробуем гонконгские вафли и пельмешки из гида Мишлен. Также увидим обратную сторону Гонконга, как живут среднестатистические семьи, как строят жильё даже в подземных переходах.</div>
+          <div class="dtrans"><span>⛴ Star Ferry (~30 минут)</span><span>🚡 Peak Tram (15 минут)</span></div>
+        </div>
+        <div class="dimg"><img src="img/d2.jpg" loading="lazy" alt="Гонконг Victoria Peak"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 4</div></div>
+        <div class="dm">
+          <div class="ddate">Вторник · 27 октября</div>
+          <div class="dtit">Макао</div>
+          <div class="ddesc">Утром отправляемся на пароме в Макао. Прогуляемся по историческому центру и проникнемся следами португальской культуры, увидим руины собора Святого Павла, а вечером познакомимся с районом современных казино и почувствуем себя героями фильма «Одиннадцать друзей Оушена». Также познакомимся с локальной стороной жизни, чтобы понять, почему Макао является самым густонаселённым городом мира.</div>
+          <div class="dtrans"><span>⛴ паром до Макао ~1 часа</span><span>🚗 до 1 ч по городу</span></div>
+        </div>
+        <div class="dimg"><img src="img/d3.jpg" loading="lazy" alt="Макао"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 5</div></div>
+        <div class="dm">
+          <div class="ddate">Среда · 28 октября</div>
+          <div class="dtit">Полный день в Макао</div>
+          <div class="ddesc">Продолжаем исследовать Макао. Посетим самые впечатляющие гостиничные комплексы (игорная индустрия Макао в 7 раз больше знаменитого Лас-Вегаса), посмотрим знаменитые шоу фонтанов, увидим местные Биг-Бен и Эйфелеву башню. Вторую часть дня проведём на крыше нашего современного отеля, делясь впечатлениями друг с другом и готовясь к поездке в Шанхай.</div>
+          <div class="dtrans"><span>🚗 до 1 ч по городу</span></div>
+        </div>
+        <div class="dimg"><img src="img/d4.jpg" loading="lazy" alt="Макао казино"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 6</div></div>
+        <div class="dm">
+          <div class="ddate">Четверг · 29 октября</div>
+          <div class="dtit">Шанхай</div>
+          <div class="ddesc">Утром отправляемся на самолёте из Макао в Шанхай. Вечером гуляем по набережной The Bund и впервые видим знаменитую панораму небоскрёбов Пудуна. В этот же вечер знакомимся с туристическим Шанхаем — нас ждут сверкающие небоскрёбы, полные туристов пешеходные улицы и роскошные набережные.</div>
+          <div class="dtrans"><span>✈️ перелёт Макао→Шанхай (включён) ~2,5 часа</span><span>🚗 до 1 ч по городу</span></div>
+        </div>
+        <div class="dimg"><img src="https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?w=400&q=65" loading="lazy" alt="Шанхай Бунд"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 7</div></div>
+        <div class="dm">
+          <div class="ddate">Пятница · 30 октября</div>
+          <div class="dtit">Современный Шанхай</div>
+          <div class="ddesc">Исследуем современный Шанхай — лучший инфраструктурный город мира. Знакомимся с «Европейским Шанхаем», его французской архитектурой и обсуждаем тему русской колонии в Шанхае. Вечером нас ждёт посещение хорошего ресторана и китайской бани.</div>
+          <div class="dtrans"><span>🚗 до 1 ч по городу</span></div>
+        </div>
+        <div class="dimg"><img src="img/day7-bund.jpg" loading="lazy" alt="Набережная Бунд"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 8</div></div>
+        <div class="dm">
+          <div class="ddate">Суббота · 31 октября</div>
+          <div class="dtit">Последний полноценный день</div>
+          <div class="ddesc">После завтрака отправляемся в «Водный город №1 в Китае», чтобы убедиться, что города на воде — не только прерогатива Италии. После обеда отправляемся в чайный дом, чтобы познакомиться с китайской чайной культурой и узнать больше. Вечером нас ждёт большой прощальный ужин, за которым мы сможем поделиться впечатлениями и вспомнить лучшие моменты трипа.</div>
+          <div class="dtrans"><span>🚗 до 1 ч по городу</span></div>
+        </div>
+        <div class="dimg"><img src="img/day8-watertown.jpg" loading="lazy" alt="Водный город"></div>
+      </div>
+
+      <div class="day">
+        <div class="dl"><div class="dnum">День 9</div></div>
+        <div class="dm">
+          <div class="ddate">Воскресенье · 1 ноября</div>
+          <div class="dtit">Вылет домой</div>
+          <div class="ddesc">Совместный завтрак, сборы в аэропорт и окончание тура.</div>
+          <div class="dtrans"><span>✈️ вылет из Шанхая</span></div>
+        </div>
+        <div class="dimg"><img src="img/important-macao.jpg" loading="lazy" alt="Отлёт"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg)">
+  <div class="inn">
+    <div class="ey fi">Транспорт</div>
+    <h2 class="st fi">Передвигаемся как местные</h2>
+    <div class="tlist fi">
+      <div class="tc"><div class="tico">🚄</div><div class="tna">Скоростной поезд</div><div class="tde">Из Гуанчжоу в Гонконг — меньше часа.</div></div>
+      <div class="tc"><div class="tico">⛴</div><div class="tna">Паром</div><div class="tde">Из Гонконга в Макао — живописный переезд по морю.</div></div>
+      <div class="tc"><div class="tico">✈️</div><div class="tna">Перелёт включён</div><div class="tde">Из Макао в Шанхай — включён в стоимость тура.</div></div>
+    </div>
+    <p class="fi" style="margin-top:20px;font-size:13px;color:var(--muted)">Также: двухэтажные трамваи Гонконга, Star Ferry, такси и метро. Всю логистику берём на себя.</p>
+  </div>
+</section>
+
+<section style="background:var(--bg)" id="guides">
+  <div class="inn">
+    <div class="ey fi">Организаторы</div>
+    <h2 class="st fi">Ваши организаторы</h2>
+    <div class="ggrid fi">
+      <div class="gc">
+        <div class="gimg"><img src="img/d7-new.jpg" loading="lazy" alt="Сергей"></div>
+        <div class="gbody">
+          <div class="grole">Организатор · Sergio Travel</div>
+          <div class="gname">Серхио (Сергей Васильев)</div>
+          <div class="gbio">6 лет в активном путешествии, 62 страны за плечами, от Латинской Америки и Африки до Японии и Франции. Блогер, основатель одноименного YouTube-канала. Самое интересное для меня в путешествии и жизни — общаться с людьми и объединять их.</div>
+          <div class="glangs"><span class="lt">Русский</span><span class="lt">English</span><span class="lt">Español</span><span class="lt">Português</span></div>
+        </div>
+      </div>
+      <div class="gc">
+        <div class="gimg"><img src="img/d8-new.jpg" loading="lazy" alt="Гордей"></div>
+        <div class="gbody">
+          <div class="grole">Со-организатор</div>
+          <div class="gname">Гордей Деньщиков</div>
+          <div class="gbio">Путешественник с опытом более 50 стран. В копилке есть такие необычные направления как Сирия и Мьянма. Говорю на английском, французском и китайском. Опытный менеджер и надёжный товарищ.</div>
+          <div class="glangs"><span class="lt">Русский</span><span class="lt">English</span><span class="lt">Français</span><span class="lt">中文</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2)">
+  <div class="inn">
+    <div class="ey fi">Состав тура</div>
+    <h2 class="st fi">Что входит в стоимость</h2>
+    <div class="igrid fi">
+      <div class="ic">
+        <div class="icit">Включено</div>
+        <ul class="ilist">
+          <li>проживание по всему маршруту (одноместное)</li>
+          <li>все завтраки</li>
+          <li>приветственный и прощальный ужины</li>
+          <li>все переезды внутри маршрута</li>
+          <li>перелёт Макао → Шанхай</li>
+          <li>входные билеты по программе</li>
+          <li>гиды и все активности по программе</li>
+        </ul>
+      </div>
+      <div class="ic ex">
+        <div class="icit">Не включено</div>
+        <ul class="ilist">
+          <li>перелёт в Гуанчжоу и из Шанхая (~$300–400)</li>
+          <li>обеды</li>
+          <li>часть ужинов (кроме первого и последнего)</li>
+          <li>страховка</li>
+          <li>личные расходы</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="psec" id="booking">
+  <div class="inn">
+    <div class="ey fi">Стоимость</div>
+    <h2 class="st fi">Полный комфорт</h2>
+    <p class="fi" style="font-size:12px;color:var(--gold);letter-spacing:.04em;margin-top:-20px;margin-bottom:32px">62 страны личного опыта · 1000+ друзей по всему миру</p>
+    <div class="ptiers fi">
+      <div class="tier ft">
+        <div class="tbadge">🫡 Единственный формат</div>
+        <div class="tname">«Полный комфорт»</div>
+        <div class="tprice">$2 900</div>
+        <div class="talt">одноместное размещение по всему маршруту</div>
+        <ul class="tinc">
+          <li>всё включено кроме обедов и части ужинов</li>
+          <li>одноместные номера со всеми удобствами</li>
+          <li>все завтраки и два ужина</li>
+          <li>все внутренние переезды включая перелёт</li>
+          <li>входные билеты по программе</li>
+          <li>два гида</li>
+        </ul>
+      </div>
+      <div class="tier" style="background:transparent;padding:42px 0 42px 42px;justify-content:center">
+        <p style="font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:24px">По всем вопросам можно написать организаторам напрямую. Поможем разобраться с визой, билетами, маршрутом и любыми организационными вопросами.</p>
+        <a href="https://t.me/SirElSergio" target="_blank" class="bg" style="display:inline-block;margin-bottom:12px">→ Написать Сергею</a><br>
+        <a href="https://t.me/gordeydensh" target="_blank" class="bo" style="display:inline-block">→ Написать Гордею</a>
+        <p style="font-size:12px;color:var(--muted);margin-top:16px">Оплата 30% сразу, ещё 40% за месяц до поездки и 30% при встрече. Рубли, крипта, любые валюты.</p>
+      </div>
+    </div>
+    <div class="psteps fi">
+      <div class="ps"><div class="pspct">30%</div><div class="pswhen">Предоплата при бронировании</div><div class="psnote">Бронирует ваше место</div></div>
+      <div class="ps"><div class="pspct">40%</div><div class="pswhen">За месяц до поездки</div><div class="psnote">За 30 дней до старта</div></div>
+      <div class="ps"><div class="pspct">30%</div><div class="pswhen">Остаток при встрече</div><div class="psnote">В первый день в Гуанчжоу</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2)">
+  <div class="inn">
+    <div class="ey fi">FAQ</div>
+    <h2 class="st fi">Ответы на популярные вопросы</h2>
+    <div class="flist fi">
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Как производится оплата?</span><i class="ficon">+</i></div>
+        <div class="fa">Оплата в три этапа: 30% при бронировании, 40% за месяц до поездки и остаток (30%) в день встречи. Возможны рубли, крипта и любые валюты. По деталям пишите <a href="https://t.me/SirElSergio" style="color:var(--gold)">@SirElSergio</a>.</div>
+      </div>
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Нужна ли виза в Гонконг и Макао?</span><i class="ficon">+</i></div>
+        <div class="fa">Для граждан России — гонконгская виза выдаётся при въезде на 14 дней. В Макао — аналогично. Мы поможем разобраться с документами и объясним весь процесс заранее.</div>
+      </div>
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Откуда лучше лететь и куда?</span><i class="ficon">+</i></div>
+        <div class="fa">Летите в Гуанчжоу (аэропорт CAN), улетаете из Шанхая (PVG или SHA). Билет в одну сторону из России обойдётся около $300. Поможем подобрать удобные рейсы.</div>
+      </div>
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Что если я один (одна)?</span><i class="ficon">+</i></div>
+        <div class="fa">Именно для этого и делаем маленькие группы — чтобы незнакомые люди, схожие по духу, становились компанией. С нами едут только открытые светлые люди.</div>
+      </div>
+          <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Можно ли отменить бронирование после предоплаты?</span><i class="ficon">+</i></div>
+        <div class="fa">После предоплаты мы делаем бронирования и покупку билетов под конкретного туриста, большинство из этих броней — невозвратные. Поэтому после внесения предоплаты бронирование невозможно отменить. Возможной опцией является поиск путешественника на своё место. В любом случае, мы попытаемся найти опции для решения проблемы.</div>
+      </div>
+      <div class="fi2">
+        <div class="fq" onclick="tf(this)"><span>Что если наберётся мало людей?</span><i class="ficon">+</i></div>
+        <div class="fa">Это тур, в который я еду сам — вне зависимости от количества участников. Если соберётся меньше людей, в поездку отправится один из организаторов. Минимальное число участников для запуска не установлено.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="ctabg"></div>
+  <div class="ctai">
+    <h2 class="ctah">Всего <em>6 мест.</em><br>Одно — ваше?</h2>
+    <p class="ctas">По всем вопросам можно написать организаторам напрямую. Поможем с визой, билетами и любыми организационными вопросами.</p>
+    <div class="brow">
+      <a href="https://t.me/SirElSergio" class="bg" target="_blank">→ Написать Сергею</a>
+      <a href="https://t.me/gordeydensh" class="bo" target="_blank">→ Написать Гордею</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="../index.html" class="flo">Sergio Travel</a>
+  <div class="fli">
+    <a href="https://t.me/travelssergio" target="_blank">Telegram</a>
+    <a href="https://sergiotravel.ru" target="_blank">sergiotravel.ru</a>
+  </div>
+  <div class="fco">© 2026 Sergio Travel</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60),{passive:true});
+const els=document.querySelectorAll('.fi');
+const ob=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('v'),i*55);ob.unobserve(e.target)}});
+},{threshold:.08});
+els.forEach(e=>ob.observe(e));
+function tf(el){const it=el.closest('.fi2'),op=it.classList.contains('op');document.querySelectorAll('.fi2.op').forEach(i=>i.classList.remove('op'));if(!op)it.classList.add('op')}
+</script>
+</body>
+</html>
