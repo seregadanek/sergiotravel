@@ -61,7 +61,7 @@ nav.solid{background:rgba(11,11,11,.97);border-bottom:1px solid var(--border)}
 }
 .hero-bg{
   position:absolute;inset:0;
-  background:url('img/hero-new.jpg') center/cover no-repeat;
+  background:url('img/hero.jpg') center/cover no-repeat;
   filter:brightness(.32);
 }
 .hero-grad{
@@ -107,7 +107,7 @@ nav.solid{background:rgba(11,11,11,.97);border-bottom:1px solid var(--border)}
 .section-inner{max-width:960px;margin:0 auto}
 .eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:300;line-height:1.1;margin-bottom:36px}
-.tours-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.tours-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
 .tour-card{transition:box-shadow .4s}
 .tour-card:hover{box-shadow:0 0 40px rgba(201,169,110,.25),0 0 80px rgba(201,169,110,.1)}
 .tour-card{
@@ -132,11 +132,12 @@ nav.solid{background:rgba(11,11,11,.97);border-bottom:1px solid var(--border)}
 }
 .tour-status-open{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
 .tour-status-soon{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.tour-status-closed{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#e05555;margin-bottom:7px;font-weight:500}
 .tour-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1.1;color:var(--text);margin-bottom:5px}
 .tour-dates{font-size:11px;color:rgba(239,236,229,.5);margin-bottom:8px}
 .tour-desc{font-size:12px;color:rgba(239,236,229,.55);line-height:1.55;margin-bottom:14px}
 .tour-link{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);border-bottom:1px solid rgba(201,169,110,.5);padding-bottom:2px;display:inline-block}
-.tour-link-dim{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid rgba(106,106,106,.3);padding-bottom:2px;display:inline-block}
+.tour-link{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid rgba(106,106,106,.3);padding-bottom:2px;display:inline-block}
 
 /* ABOUT */
 .about-section{background:var(--bg2);padding:72px 32px}
@@ -193,7 +194,7 @@ footer{
   footer{padding:24px 20px;justify-content:center;text-align:center}
   .footer-links{justify-content:center}
 }
-@media(min-width:681px) and (max-width:1024px){
+@media(min-width:681px) and (max-width:1100px){
   .tours-grid{grid-template-columns:1fr 1fr}
   .tour-card{height:440px}
 }
@@ -253,35 +254,35 @@ footer{
     <div class="tours-grid">
 
       <!-- Уганда / Руанда -->
-      <a href="https://t.me/travelssergio" target="_blank" rel="noopener" class="tour-card">
-        <div style="position:absolute;top:16px;left:16px;z-index:10;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(201,169,110,.2);border:1px solid rgba(201,169,110,.5);color:#C9A96E;padding:5px 11px;backdrop-filter:blur(4px)">Экспедиция</div>
-        <div class="tour-card-bg" style="background-image:url('img/gorilla-new.jpg')"></div>
+      <div class="tour-card" style="cursor:default">
+        <div style="position:absolute;top:16px;left:16px;z-index:10;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(180,40,40,.75);border:1px solid rgba(220,80,80,.6);color:#fff;padding:5px 11px;backdrop-filter:blur(4px)">Закончен</div>
+        <div class="tour-card-bg" style="background-image:url('img/gorilla.jpg')"></div>
         <div class="tour-veil"></div>
         <div class="tour-body">
-          <div class="tour-status-open">● Открыта запись</div>
+          <div class="tour-status-closed">✕ Запись закрыта</div>
           <div class="tour-name">Уганда. Руанда.</div>
           <div class="tour-dates">20-е числа июля 2026</div>
           <div class="tour-desc">Гориллы в местах их обитания. Сафари в самые незаезженные джунгли мира. Формат для тех, кто хочет быть первооткрывателем — за это самая выгодная цена, которой больше не будет.</div>
-          <span class="tour-link">Узнать подробнее →</span>
+          <span class="tour-link">Подробнее →</span>
         </div>
-      </a>
+      </div>
 
       <!-- Стамбул -->
-      <a href="istanbul/" class="tour-card">
-        <div class="tour-card-bg" style="background-image:url('img/anyma-new.jpg')"></div>
+      <div class="tour-card" style="cursor:default">
+        <div class="tour-card-bg" style="background-image:url('img/anyma.jpg')"></div>
         <div class="tour-veil"></div>
         <div class="tour-body">
-          <div class="tour-status-open">● Открыта запись</div>
+          <div class="tour-status-closed">✕ Группа набрана</div>
           <div class="tour-name">Стамбул. ÆDEN.</div>
           <div class="tour-dates">10–13 сентября 2026</div>
           <div class="tour-desc">4 дня. Пентхаус. Своя компания. Anyma ÆDEN на открытой площадке у Босфора.</div>
           <span class="tour-link">Подробнее →</span>
         </div>
-      </a>
+      </div>
 
       <!-- Китай -->
       <a href="china-tour/" class="tour-card">
-        <div class="tour-card-bg" style="background-image:url('img/chongqing-new.jpg')"></div>
+        <div class="tour-card-bg" style="background-image:url('img/chongqing.jpg')"></div>
         <div class="tour-veil"></div>
         <div class="tour-body">
           <div class="tour-status-open">● Открыта запись</div>
@@ -294,13 +295,26 @@ footer{
 
       <!-- Три Китая -->
       <a href="tri-kitaya/" class="tour-card">
-        <div class="tour-card-bg" style="background-image:url('https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=800&q=70')"></div>
+        <div class="tour-card-bg" style="background-image:url('img/chongqing-night.jpg')"></div>
         <div class="tour-veil"></div>
         <div class="tour-body">
           <div class="tour-status-open">● Открыта запись</div>
           <div class="tour-name">Три Китая</div>
-          <div class="tour-dates">24 октября — 1 ноября 2026</div>
+          <div class="tour-dates">24 октября - 1 ноября 2026</div>
           <div class="tour-desc">Гонконг · Шанхай · Макао. Три абсолютно разных версии Китая.</div>
+          <span class="tour-link">Подробнее →</span>
+        </div>
+      </a>
+
+      <!-- Бразилия -->
+      <a href="https://t.me/sirelsergio" target="_blank" rel="noopener" class="tour-card">
+        <div class="tour-card-bg" style="background-image:url('img/brazil-rio.jpg')"></div>
+        <div class="tour-veil"></div>
+        <div class="tour-body">
+          <div class="tour-status-open">● Открыта запись</div>
+          <div class="tour-name">Бразилия. Рио.</div>
+          <div class="tour-dates">Ноябрь 2026</div>
+          <div class="tour-desc">Едем в Рио — неделя в самом живописном городе Латинской Америки. От барбекю в фавелах до полёта на вертолёте.</div>
           <span class="tour-link">Подробнее →</span>
         </div>
       </a>
@@ -316,7 +330,7 @@ footer{
     <h2 class="section-title">Авторские путешествия<br>с Sergio</h2>
     <div class="about-grid">
       <div class="about-photo">
-        <img src="img/sergio-new.jpg" alt="Серхио" loading="lazy">
+        <img src="img/sergio.jpg" alt="Серхио" loading="lazy">
       </div>
       <div class="about-text">
         <div class="about-role">Основатель · Sergio Travel</div>
@@ -374,27 +388,5 @@ window.addEventListener('scroll', function() {
   if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
 }, {passive: true});
 </script>
-
-<!-- COOKIE BANNER -->
-<div id="cookie-banner" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:rgba(20,20,20,.97);border:1px solid rgba(201,169,110,.25);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:20px 28px;max-width:640px;width:calc(100% - 40px);display:flex;align-items:center;gap:20px;box-shadow:0 8px 40px rgba(0,0,0,.4)">
-  <p style="font-size:12px;color:rgba(239,236,229,.55);line-height:1.65;flex:1;margin:0">Мы используем cookies для корректной работы сайта. Продолжая просмотр, вы соглашаетесь с их использованием.</p>
-  <button onclick="acceptCookies()" style="flex-shrink:0;background:var(--gold,#C9A96E);color:#0B0B0B;border:none;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:12px 22px;cursor:pointer;transition:background .2s;white-space:nowrap" onmouseover="this.style.background='#DEC08A'" onmouseout="this.style.background='#C9A96E'">Принять</button>
-</div>
-<script>
-(function(){
-  if(localStorage.getItem('cookies_accepted')==='1'){
-    document.getElementById('cookie-banner').style.display='none';
-  }
-})();
-function acceptCookies(){
-  localStorage.setItem('cookies_accepted','1');
-  var b=document.getElementById('cookie-banner');
-  b.style.transition='opacity .3s,transform .3s';
-  b.style.opacity='0';
-  b.style.transform='translateX(-50%) translateY(20px)';
-  setTimeout(function(){b.style.display='none'},300);
-}
-</script>
-
 </body>
 </html>
